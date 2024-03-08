@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class GarageRestController {
     
-    private GarageRepository garageRepository;
+    private final GarageRepository garageRepository;
     
     public GarageRestController(GarageRepository garageRepository) {
         this.garageRepository = garageRepository;
