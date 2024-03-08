@@ -1,9 +1,7 @@
 package fr.cdrochon.vehiculeservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import fr.cdrochon.vehiculeservice.model.Client;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -36,4 +34,9 @@ public class Vehicule {
 //    private TypeFreinage typeFreinage;
 //    private TypeSuspension typeSuspension;
     private boolean climatisationVehicule;
+    
+    // communication inter ms
+    @Transient
+    private Client client;
+    private Long clientId;
 }
