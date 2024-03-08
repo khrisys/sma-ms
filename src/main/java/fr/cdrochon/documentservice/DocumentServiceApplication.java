@@ -42,7 +42,7 @@ public class DocumentServiceApplication {
                             .build(),
                     Document.builder()
                             .nomDocument("devis sans titre")
-                            .emetteurDuDocument("garage durand")
+                            .emetteurDuDocument("garage toto")
                             .typeDocument(TypeDocument.DEVIS)
                             .dateCreationDocument(LocalDate.now())
                             .dateModificationDocument(LocalDate.now())
