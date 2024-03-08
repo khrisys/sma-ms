@@ -43,12 +43,21 @@ public class DocumentServiceApplication {
                                       .typeDocument(TypeDocument.FACTURE)
                                       .dateCreationDocument(LocalDate.now())
                                       .dateModificationDocument(LocalDate.now())
-                                      .vehiculeId(v.getId())
+                                      .vehiculeId(1L)
                                       .build();
                 Document d3 = Document.builder()
                                       .nomDocument("devis sans titre")
                                       .emetteurDuDocument("garage toto")
-                                      //titre du doc à null
+                                      .emetteurDuDocument("jean jean")
+                                      .typeDocument(TypeDocument.DEVIS)
+                                      .dateCreationDocument(LocalDate.now())
+                                      .dateModificationDocument(LocalDate.now())
+                                      .vehiculeId(1L)
+                                      .build();
+                Document d4 = Document.builder()
+                                      .nomDocument("devis sans titre")
+                                      .emetteurDuDocument("garage toto")
+                                      .emetteurDuDocument("jean jean")
                                       .typeDocument(TypeDocument.DEVIS)
                                       .dateCreationDocument(LocalDate.now())
                                       .dateModificationDocument(LocalDate.now())
@@ -57,6 +66,7 @@ public class DocumentServiceApplication {
                 documentRepository.save(d1);
                 documentRepository.save(d2);
                 documentRepository.save(d3);
+                documentRepository.save(d4);
             });
         };
     }
