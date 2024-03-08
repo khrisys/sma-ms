@@ -31,8 +31,7 @@ public class ClientServiceApplication {
                                                   .rue("avenue du jo")
                                                   .cp("59140")
                                                   .numeroDeRue("51")
-                                                  .ville(
-                                                          "Cloerwak")
+                                                  .ville("Cloerwak")
                                                   .build();
             
             List<Client> customerList = List.of(
@@ -50,6 +49,13 @@ public class ClientServiceApplication {
                           .prenomClient("Christine")
                           .mailClient("chirstine.berga@tut.io")
                           .telClient("9876541320")
+                          .adresseClient(adresse2)
+                          .build(),
+                    Client.builder()
+                          .nomClient("Poloua")
+                          .prenomClient("Gerard")
+                          .mailClient("gegelembrouille@tut.io")
+                          .telClient("8888888888")
                           .adresseClient(adresse2)
                           .build()
             
