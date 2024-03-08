@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -53,6 +54,16 @@ public interface ClientRestFeign {
      */
     default List<Client> getDefaultAllClients(Exception exception) {
         System.err.println("Exception default getAllCustomers : " + exception.getMessage());
-        return List.of();
+        
+        List<Client> clients = new ArrayList<>();
+        AdresseClient adresseClient = new AdresseClient("nd", "nd", "nd", "nd");
+        clients.forEach(c-> {
+            c.setNomClient("Nom non disponible");
+            c.setPrenomClient("Prenom non disponible");
+            c.setMailClient("Mail non disponible");
+            c.setTelClient("Téléphone non disponible");
+            c.setAdresseClient(adresseClient);
+        });
+        return clients;
     }
 }
