@@ -31,15 +31,15 @@ public interface ClientRestFeign {
      * @return objet client vide
      */
     default Client getDefaultClient(Long id, Exception exception) {
-        AdresseClient adresseClient = new AdresseClient("Non disponible", "Non disponible"
-                , "Non disponible", "Non disponible");
+        AdresseClient adresseClient = new AdresseClient("Numero de rue non disponible", "Rue non " +
+                "disponible", "CP non disponible", "Ville non disponible");
         
         Client client = new Client();
         client.setId(id);
         client.setNomClient("Non disponible");
         client.setPrenomClient("Non disponible");
         client.setTelClient("Non disponible");
-        client.setMailClient("Not available");
+        client.setMailClient("Non disponible");
         client.setAdresseClient(adresseClient);
         System.err.println("Exception default getDefaultCustomer : " + exception.getMessage());
         return client;
