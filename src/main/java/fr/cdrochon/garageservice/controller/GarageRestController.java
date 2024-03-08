@@ -1,4 +1,4 @@
-package fr.cdrochon.garageservice.web;
+package fr.cdrochon.garageservice.controller;
 
 import fr.cdrochon.garageservice.entity.Garage;
 import fr.cdrochon.garageservice.repository.GarageRepository;
@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Set;
 
 @RestController
 public class GarageRestController {
