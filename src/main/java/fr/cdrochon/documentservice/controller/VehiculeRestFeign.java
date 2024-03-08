@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -39,9 +40,9 @@ public interface VehiculeRestFeign {
         
         Vehicule vehicule = new Vehicule();
         vehicule.setId(id);
-        vehicule.setDateMiseEnCirculationVehicule(LocalDate.MIN);
+        vehicule.setDateMiseEnCirculationVehicule(LocalDate.of(2000, 01, 01));
         vehicule.setImmatriculationVehicule("Non disponible");
-        vehicule.setTypeVehicule(TypeVehicule.VOITURE);
+        vehicule.setTypeVehicule(TypeVehicule.NON_DISPONIBLE);
         vehicule.setMarqueVehicule(MarqueVehicule.NON_DISPONIBLE);
         vehicule.setClimatisationVehicule(false);
         System.err.println("Exception default getDefaultClient : " + exception.getMessage());
@@ -55,7 +56,15 @@ public interface VehiculeRestFeign {
      * @return liste vide de vehicules
      */
     default List<Vehicule> getDefaultAllVehicules(Exception exception) {
+        List<Vehicule> vehicules = new ArrayList<>();
+        vehicules.forEach(v->{
+            v.setImmatriculationVehicule("Immatriculation non disponible");
+            v.setClimatisationVehicule(false);
+            v.setTypeVehicule(TypeVehicule.NON_DISPONIBLE);
+            v.setMarqueVehicule(MarqueVehicule.NON_DISPONIBLE);
+            v.setDateMiseEnCirculationVehicule(LocalDate.of(2020,01,01));
+        });
         System.err.println("Exception default getDefaultAllClients : " + exception.getMessage());
-        return List.of();
+        return vehicules;
     }
 }
