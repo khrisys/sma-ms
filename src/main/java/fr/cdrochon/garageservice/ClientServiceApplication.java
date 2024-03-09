@@ -1,16 +1,20 @@
 package fr.cdrochon.garageservice;
 
+import fr.cdrochon.garageservice.config.GetClientParamsConfig;
+import fr.cdrochon.garageservice.config.GetParamsGlobalConfig;
 import fr.cdrochon.garageservice.entity.AdresseClient;
 import fr.cdrochon.garageservice.entity.Client;
 import fr.cdrochon.garageservice.repository.ClientRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
 @SpringBootApplication
+@EnableConfigurationProperties({GetParamsGlobalConfig.class, GetClientParamsConfig.class})
 public class ClientServiceApplication {
     
     public static void main(String[] args) {
